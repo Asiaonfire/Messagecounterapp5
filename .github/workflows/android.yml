@@ -20,14 +20,13 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      # This is the final, definitive build step
-      - name: Build with Gradle (No Cache)
+      - name: Build with Gradle
         uses: gradle/gradle-build-action@v2
         with:
-          # Tell the action to ignore all caches
-          cache-disabled: true
-          # Tell Gradle to clean before building
+          gradle-version: '8.2'
           arguments: clean assembleDebug
+          
+          cache-disabled: true
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
