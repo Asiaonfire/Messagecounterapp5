@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Messagecounterapp5"
-include ':app' 
+include ':app'
