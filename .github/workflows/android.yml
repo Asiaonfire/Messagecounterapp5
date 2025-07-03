@@ -20,8 +20,14 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
+      - name: Show permissions before chmod
+        run: ls -l gradlew
+
       - name: Give permission to Gradle
         run: chmod +x ./gradlew
+
+      - name: Show permissions after chmod
+        run: ls -l gradlew
 
       - name: Build debug APK
         run: ./gradlew assembleDebug
